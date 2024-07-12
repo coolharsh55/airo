@@ -1,0 +1,89 @@
+term,mapping,dpv,note
+airo:AICapability,skos:exactMatch,ai:Capability,
+airo:AIComponent,skos:exactMatch,tech:Component,
+airo:AIDeployer,skos:exactMatch,"tech:Deployer,eu-aiact:AIDeployer",
+airo:AIDeveloper,skos:exactMatch,tech:Developer,
+airo:AILifecyclePhase,skos:exactMatch,dpv:NotAvailable,Add tech:LifecyclePhase with enum
+airo:AIOperator,skos:exactMatch,"tech:Operator,eu-aiact:AIOperator",
+airo:AIProvider,skos:exactMatch,"tech:Provider,eu-aiact:AIProvider",
+airo:AIQuality,nomatch,,Asked about expanding DQV
+airo:AISubject,skos:broader,tech:Subject,
+airo:AISystem,skos:exactMatch,"ai:AISystem,eu-aiact:AISystem",
+airo:AITechnique,skos:exactMatch,ai:Technique,
+airo:AIUser,skos:exactMatch,tech:User,
+airo:AreaOfImpact,skos:broader,dpv:Impact,
+airo:Change,skos:exactMatch,dpv:NotApplicable,Not clear on what this is modelling
+airo:CodeOfConduct,skos:exactMatch,dpv:CodeOfConduct,
+airo:compliesWithRegulation,skos:broader,dpv:hasApplicableLaw,Complies with regulation indicates evaluated status of being compliant. Instead presuming this property is about which regulation is associated for compliance
+airo:conformsToStandard,skos:broader,dpv:hasOrganisationalMeasure dpv:StandardsConformance,"Conforms assumes that an evaluation has been performed and the implementation found conformant. This property can relate to several things: which standard is applicable or should be considered for conformance, and the status of conformance with that standard."
+airo:Consequence,skos:exactMatch,dpv:Consequence,
+airo:Control,skos:exactMatch,skos:RiskControl,
+airo:Dataset,skos:broader,dpv:Data,add Dataset to TECH
+airo:detectsEvent,skos:exactMatch,skos:DetectionControl,"DPV doesn't have a property to associate control with event. This should be added but without the event range as detection can also relate to threats, vulnerabilities, etc. So property name can be 'detects' and 'isDetectedBy'"
+airo:Documentation,skos:exactMatch,tech:Documentation,
+airo:Domain,skos:broader,dpv:Sector,Keep sector
+airo:eliminatesEvent,skos:broader,skos:ReduceLikelihood,Eliminate refers to completely removing or nullifying the likelihood of an event. DPV doesn't have a property - this should be added as  'reducesLikelihoodOf' and 'eliminatesLikelihoodOf'
+airo:EnvironmentOfUse,skos:broader,dpv:LocationLocality,
+airo:Event,skos:exactMatch,dpv:NotApplicable,"In DPV, we have specific events for risk, incident, and so on - as the broad parent event can be confused for other non-risk related events e.g. data collection and so on"
+airo:exploitsVulnerability,skos:exactMatch,risk:exploitsVulnerability,
+airo:Exposure,nomatch,,"Not sure how this is calculcated based on likelihood, severity, and residual risk after mitigation"
+airo:followsCodeOfConduct,skos:exactMatch,dpv:CodeOfConduct,DPV has a class for code of conduct associated using dpv:hasOrganisationalMeasure whereas this is a property.
+airo:Frequency,skos:exactMatch,dpv:Frequency,
+airo:GPAIModel,skos:exactMatch,eu-aiact:GPAIModel,
+airo:hasAISubject,skos:exactMatch,tech:hasSubject,
+airo:hasAIUser,skos:exactMatch,tech:hasUser,
+airo:hasCapability,skos:exactMatch,tech:hasCapability,"hasCapability should be added to AI extension. Here capability is a property with domain as a union of two concepts. In DPV, the domain would be ai:AI"
+airo:hasComponent,skos:exactMatch,dpv:NotAvailable,"tech:Component exists as a class, but there is no property provided for associating it with tech:System. Propeties tech:hasComponent and tech:isComponentOf should be added."
+airo:hasConsequence,skos:exactMatch,dpv:hasConsequence,
+airo:hasControl,skos:exactMatch,skos:hasControl,
+airo:hasDocumentation,skos:exactMatch,tech:hasDocumentation,
+airo:hasExposure,nomatch,,It is unclear what this is modelling.
+airo:hasFrequency,skos:exactMatch,dpv:hasFrequency,
+airo:hasImpact,skos:exactMatch,dpv:hasImpact,
+airo:hasImpactOnArea,skos:broader,dpv:hasImpactOn,"This should probably be a property of the impact itself rather than an external assertion. E.g. Harm is the impact, and the domain/nature of that harm is on physical health. So this is either a subclass e.g. PhysicalHarm, or a property of that harm e.g. impactsArea Physical Health. I prefer the subclass mechanism as it support building a taxonomy of impacts"
+airo:hasImpactOnEntity,skos:broader,dpv:hasImpactOn,
+airo:hasInput,nomatch,,"Not sure what this is modelling. It is data, then this should be dpv:hasData?"
+airo:hasLicense,skos:exactMatch,dpv:NotAvailable,DPV doesn't have a license property. Should be added to TECH as tech:License and tech:hasLicense
+airo:hasLifecyclePhase,skos:exactMatch,dpv:NotAvailable,DPV doesn't have lifecycle of technology. Should be added to TECH as tech:LifecyclePhase and tech:hasLifecyclePhase
+airo:hasLikelihood,skos:exactMatch,dpv:hasLikelihood,
+airo:hasModality,nomatch,,Not sure what this is modelling
+airo:hasPreDeterminedChange,skos:exactMatch,dpv:NotAvailable,Should be added to AI Act extension
+airo:hasPurpose,skos:exactMatch,dpv:hasPurpose,
+airo:hasQuality,nomatch,,"DQV should be used here e.g. dqv:hasQualityMeasurement? A note should be added to TECH to specify how to express quality, version, etc. using external properties"
+airo:hasRisk,skos:exactMatch,dpv:hasRisk,
+airo:hasSeverity,skos:exactMatch,dpv:hasSeverity,
+airo:hasStakeholder,skos:broader,dpv:hasEntity,Stakeholder is too vague - DPV prefers explicit indication of entity roles.
+airo:hasVersion,nomatch,,"For versioning and other metadata, dct:hasVersion can be used, or DCAT should be used. It has e.g. dcat:version"
+airo:hasVulnerability,skos:exactMatch,skos:hasVulnerability,
+airo:Hazard,skos:broader,dpv:Risk,
+airo:Impact,skos:exactMatch,dpv:Impact,
+airo:Input,skos:broader,dpv:Data,
+airo:isAppliedWithinDomain,skos:broader,dpv:hasSector,"There is no definition for domain in EU law that I could find. Sector is defined, and there is NACE and NIS2 which specifically refer to sectors"
+airo:isDeployedBy,skos:exactMatch,tech:hasDeployer,
+airo:isDevelopedBy,skos:exactMatch,tech:hasDeveloper,
+airo:isFollowedByControl,skos:broader,dpv:isBefore,"DPV doesn't have control ordering, however dpv:isBefore and dpv:isAfter can be used here"
+airo:isPartOfControl,nomatch,,dct:hasPart should be used here
+airo:isProvidedBy,skos:exactMatch,tech:hasProvider,
+airo:isRiskSourceFor,skos:exactMatch,dpv:hasRisk,
+airo:isUsedWithinEnvironment,nomatch,,"Unclear on what environment means here, whether it includes conditions, operation, people involved, public/private location, weather conditions, etc. Specific properties already exist for location, users, etc."
+airo:License,skos:exactMatch,dpv:NotAvailable,
+airo:Likelihood,skos:exactMatch,dpv:Likelihood,
+airo:Misuse,skos:broader,skos:Misuse,
+airo:mitigatesEvent,skos:broader,skos:ReduceSeverity,"DPV doesn't contain properties for indicating mitigation or modification of events. Properties should be added as: risk:modifies and risk:isModifiedBy, risk:mitigates and risk:isMitigatedBy"
+airo:MLModel,skos:broader,ai:Model,
+airo:Modality,nomatch,,Not sure what this is modelling
+airo:modifiesEvent,skos:broader,skos:RiskControl,
+airo:Output,skos:broader,dpv:DerivedData,
+airo:producesOutput,nomatch,,Not sure what this is referring to. If this is the inverse of tech:hasProducer i.e. tech:isProducedBy then that's clear.
+airo:providesInput,skos:broader,dpv:hasDataSource,DPV doesn't have input and output. It does have Data Source and Recipient
+airo:Purpose,skos:exactMatch,dpv:Purpose,
+airo:Regulation,skos:broader,dpv:Law,
+airo:Risk,skos:exactMatch,dpv:Risk,
+airo:RiskSource,skos:exactMatch,skos:RiskSource,
+airo:Severity,skos:exactMatch,dpv:Severity,
+airo:Stakeholder,skos:broader,dpv:Entity,
+airo:Standard,skos:exactMatch,dpv:NotAvailable,Add to OrganisationalMeasure as dpv:Standard under dpv:GuidelinesPrinciples
+airo:Threat,skos:exactMatch,skos:Threat,
+airo:usesTechnique,skos:broader,dpv:NotAvailable,AI extension has Technique but no property. Should be added as ai:hasTechnique
+airo:Version,nomatch,,
+airo:Vulnerability,skos:exactMatch,skos:Vulnerability,
